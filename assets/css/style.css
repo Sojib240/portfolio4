@@ -1,0 +1,544 @@
+@font-face {
+  font-family: "Great_Warrior";
+  src: url("/assets/fonts/Great\ Warrior.ttf");
+}
+@font-face {
+  font-family: "Installer";
+  src: url("/assets/fonts/Installer.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  font-family: "Great_Warrior";
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.main {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  max-width: 1825px;
+  width: 95%;
+  height: 100%;
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.cursor-dot {
+  width: 25px;
+  height: 25px;
+  z-index: 99999;
+  background-color: #ffc48c;
+  mix-blend-mode: difference;
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  user-select: none;
+}
+/* ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊
+                                      HOME
+  ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊ */
+#home {
+  height: 100vh;
+}
+#home .container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  max-width: 1800px;
+  width: 100%;
+  margin: auto;
+  padding: 20px 0;
+}
+.nav-bar .logo h2 {
+  font-size: clamp(10px, 1.1vw, 20px);
+  color: #ffc48c;
+}
+.home_content {
+  max-width: 1400px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+.home_content .top-content,
+.bottom-content {
+  position: relative;
+}
+#home .home_content .event {
+  pointer-events: none;
+}
+.bottom-img {
+  width: clamp(50px, 7vw, 150px);
+}
+.bottom-img img {
+  width: 100%;
+  animation: rotate 2s linear infinite;
+}
+#home .home_content h1 {
+  display: flex;
+  font-size: clamp(50px, 10.45vw, 200px);
+  line-height: clamp(50px, 10vw, 202px);
+  font-family: "INSTALLER";
+  user-select: none;
+  overflow: hidden;
+  color: #fff;
+}
+#home .home_content h1 span {
+  transition: all 0.2s ease;
+}
+#home .home_content h1 span:hover {
+  color: #ffc48c;
+}
+/* .scroll {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+.scroll-inner {
+  width: clamp(20px, 2vw, 40px);
+  height: clamp(20px, 4vw, 80px);
+  border: 2px solid #ffc48c;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.scroll-inner span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  background-color: #fff;
+  animation: scroll_down 2.3s linear infinite;
+}
+@keyframes scroll_down {
+  0% {
+    top: 10%;
+    transition: 1s;
+  }
+  10% {
+    height: 25px;
+  }
+  20% {
+    height: 30px;
+  }
+  40% {
+    height: 35px;
+  }
+  50% {
+    height: 40px;
+  }
+  60% {
+    top: 80%;
+    height: 20px;
+  }
+  100% {
+    top: 10%;
+  }
+} */
+.outer-circle {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+.circle {
+  width: clamp(50px, 7vw, 130px);
+  height: clamp(50px, 7vw, 130px);
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(25px, 4vw, 60px);
+  height: clamp(25px, 4vw, 60px);
+  border-radius: 50%;
+  background: url("/assets/images/bad-boy.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.circle .text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotate 10s linear infinite;
+}
+.circle .text span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0 65px;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Installer";
+}
+@keyframes rotate {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.ready-to-work {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+.ready-to-work h2 {
+  font-size: clamp(8px, 1vw, 15px);
+  color: #ffc48c;
+  display: flex;
+}
+.ready-to-work h2 span {
+  margin-left: 10px;
+  width: clamp(8px, 1vw, 15px);
+}
+.ready-to-work h2 span img {
+  width: 100%;
+  animation: rotate 2s linear infinite;
+}
+/* ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊
+                                    ABOUT
+❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊ */
+#about {
+  padding-top: 300px;
+  padding-bottom: 300px;
+  overflow: hidden;
+}
+#about .about-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+#about .about-contents .title-text {
+  font-size: clamp(35px, 5vw, 100px);
+  font-family: "Installer";
+  text-transform: uppercase;
+
+  width: 100%;
+  color: #b6b6b613;
+  background: linear-gradient(to right, #fff, #fff) no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0%;
+  transition: 0.4s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+  position: relative;
+}
+/* ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊
+                                     WORK
+  ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊ */
+#work {
+  overflow: hidden;
+  padding-bottom: 300px;
+}
+#work .title {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+#work .title h1 {
+  font-size: clamp(50px, 10.45vw, 200px);
+  font-family: "INSTALLER";
+  display: flex;
+  gap: 10px;
+  font-weight: 100;
+  color: #fff;
+}
+#work .title h2 {
+  font-size: clamp(10px, 1.6vw, 30px);
+  font-weight: 100;
+  color: #ffc48c;
+  display: flex;
+}
+#work .title h2 span {
+  margin-left: 10px;
+  width: clamp(20px, 2vw, 40px);
+}
+#work .title h2 span img {
+  width: 100%;
+  animation: rotate 2s linear infinite;
+}
+#work .project {
+  position: relative;
+  transition: 0.3s ease all;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: 1px solid #383838;
+  overflow: hidden;
+  border-radius: 5px;
+}
+#work .project1 {
+  border-top: 1px solid #383838;
+}
+#work .card {
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-0%, -50%);
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  pointer-events: none;
+  display: flex;
+  z-index: 999;
+}
+#work .show-work-card {
+  visibility: visible;
+  opacity: 1;
+}
+#work .card img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+#work .project a {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+#work .project a h1 {
+  font-size: clamp(10px, 1.6vw, 30px);
+  transition: 0.3s ease all;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+#work .project a h2 {
+  font-size: clamp(8px, 1vw, 15px);
+  font-weight: 100;
+}
+#work .project h2 span.ball {
+  margin-right: 10px;
+  color: #ffc48c;
+}
+/*  */
+#work .marquee {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translate(0%, 0%);
+  transition: 0.3s ease all;
+  padding-top: 5px;
+  cursor: pointer;
+  pointer-events: none;
+  user-select: none;
+  background-color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  border-radius: 5px;
+}
+#work .marquee.show-work-marquee {
+  top: 50%;
+  transform: translate(0%, -50%);
+  visibility: visible;
+  opacity: 1;
+}
+#work .marquee_inner {
+  white-space: nowrap;
+  display: inline-block;
+  animation: slide 30s linear infinite;
+}
+#work .marquee_inner h1 {
+  font-size: clamp(10px, 1.6vw, 30px) !important;
+  display: inline-block;
+  color: #000;
+  transition: 0.3s ease all;
+  user-select: none;
+  font-family: "Installer";
+}
+@keyframes slide {
+  from {
+    transform: translate(0, 0%);
+  }
+  to {
+    transform: translate(-50%, 0%);
+  }
+}
+#work .color {
+  color: #ffc48c;
+  font-family: "Great_Warrior";
+  font-size: 20px;
+}
+/*  */
+/* ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊
+                                    CONTACT
+  ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊ */
+#contact {
+  padding-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+}
+#contact .contact-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  /* flex-wrap: wrap-reverse; */
+  /* position: relative; */
+}
+#contact .bottom-title {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+}
+#contact .bottom-title h2 {
+  font-size: clamp(10px, 1.6vw, 30px);
+  color: #ffc48c;
+  text-transform: uppercase;
+  font-weight: 100;
+  display: flex;
+  justify-content: flex-end;
+  display: none;
+}
+#contact .bottom-title h2 span {
+  margin-left: 10px;
+  width: clamp(20px, 2vw, 40px);
+}
+#contact .bottom-title h2 span img {
+  width: 100%;
+  animation: rotate 2s linear infinite;
+}
+#contact .bottom-title h1 {
+  font-family: "INSTALLER";
+  font-size: clamp(50px, 10.45vw, 200px);
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #fff;
+  text-align: right;
+}
+.social-media {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.social-links span a {
+  font-size: clamp(10px, 1.8vw, 35px);
+  font-family: "Great_Warrior";
+  color: #ffc48c;
+}
+.links {
+  position: relative;
+}
+.links::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 0.3s;
+}
+.links:hover::before {
+  width: 100%;
+}
+.social-links .ball {
+  color: #fff;
+}
+/* ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊
+                                  RESPOSIVE
+  ❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊❊ */
+@media (max-width: 1400px) {
+  .home_content .top-content h3 {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  /* contact */
+  #about {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  #work {
+    padding-bottom: 150px;
+  }
+}
+@media (max-width: 799px) {
+  #about .about-contents {
+    gap: 60px;
+  }
+  #about {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  #work {
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 768px) {
+  /* cotainer */
+  .container {
+    width: 90%;
+  }
+  /* hero */
+  .home_content .top-content h3 {
+    margin-bottom: 10px;
+  }
+  /* contact */
+  #contact {
+    padding-bottom: 20px;
+  }
+  .nav-bar .logo {
+    gap: 10px;
+  }
+}
+@media (max-width: 500px) {
+  #about {
+    padding-bottom: 120px;
+  }
+}
